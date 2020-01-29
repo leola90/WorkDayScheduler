@@ -1,0 +1,58 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.jumbotron {
+  text-align: center;
+  border-radius: 0;
+  border-bottom: 8px solid black;
+}
+
+textarea{
+  background: transparent;
+  height: 80%;
+  width:100%;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;  
+  height: 80px;
+  border-top: 1px solid white;;
+}
+
+.col-md-8{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+}
+
+.saveBtn {
+   border-left: 1px solid black;
+   border-top-right-radius: 15px;
+   border-bottom-right-radius: 15px;
+   background-color: teal;
+   color: white;
+   height: 80%;
+   width: 80%;
+}
