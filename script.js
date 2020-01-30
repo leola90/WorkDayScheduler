@@ -2,7 +2,7 @@
 function getLocalStorage(key) {
     let value = localStorage.getItem(key);
     if (value) {
-        $('#text${key}').text(value);
+        $(`#text${key}`).text(value);
         }
     }
     
@@ -22,7 +22,7 @@ $(document).ready(function() {
             // create 3 columns
                 
             //create column 1 for time of day 
-            var columnnOne = $('<div class="col-sm-2"> <p class="hours">' + formatAMPM(i) + '</p>');
+            var columnOne = $('<div class="col-sm-2"> <p class="hours">' + formatAMPM(i) + '</p>');
     
             //create column 2 for inputing text 
             var columnTwo = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Add your event here..."></textarea>`);        
@@ -31,12 +31,13 @@ $(document).ready(function() {
             var columnThree = $(`<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fa fa-floppy-o"></i></button>`)
     
             // append columns to row
-            row.append(columnnOne);
+            row.append(columnOne);
             row.append(columnTwo);
             row.append(columnThree);
     
             // append row to container
             $(".container").append(row);
+            getLocalStorage(i);
                 
         }
         
@@ -44,13 +45,16 @@ $(document).ready(function() {
         // Call a function to format time AM/PM 
         function formatAMPM(hours) {
             var ampm = hours >= 12 ? 'pm' : 'am';
-            //var ampm = hours >= 12 ? 'pm' : 'am';
             hours = hours % 12;
             hours = hours ? hours : 12;
             return hours + ampm;
         }
 
         formatAMPM();
+
+        function colorChange() {
+            var currntTime; 
+        }
         
         var saveBtn = $('.saveBtn');
         $('.saveBtn').on('click', function(event) {
